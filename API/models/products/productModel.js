@@ -16,6 +16,20 @@ exports.getProducts = (req, res) => {
   })
 }
 
+// exports.getProduct = (req, res) => {
+//   Product.findOne({ _id: req.params.id })
+//     .then((data) => {
+//       return res.status(200).json(data);
+//     })
+//     .catch((err) =>
+//       res.status(500).json({
+//         statusCode: 500,
+//         status: false,
+//         message: "Failed to get one product.",
+//       })
+//     );
+// };
+
 exports.getProduct = (req, res) => {
 
   Product.exists({ _id: req.params.id }, (err, result) => {

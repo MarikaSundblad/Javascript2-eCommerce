@@ -15,19 +15,19 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars black"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
 
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link class="text-dark nav-link active" to="/">Home</router-link>
+            <router-link class="text-dark nav-link active" to="/">Hem</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="text-dark nav-link active" to="/products">Products</router-link>
+            <router-link class="text-dark nav-link active" to="/products">Produkter</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="text-dark nav-link active" to="/about">About</router-link>
+            <router-link class="text-dark nav-link active" to="/about">Om</router-link>
           </li>
         </ul>
 
@@ -42,7 +42,7 @@
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-shopping-cart black"></i>
               <span v-show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{{ cartItemCount }}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdownMenuLink">
@@ -94,6 +94,9 @@ export default {
 .logo-height {
   height: 3.3rem;
   width: auto;
+}
+.black {
+  color: black;
 }
 
 
