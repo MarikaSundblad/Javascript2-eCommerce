@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <ShoppingCartProduct v-for="item in shoppingCart" :key="item.product.id" :item="item" />
+    <ShoppingCartProduct v-for="item in shoppingCart" :key="item.product._id" :item="item" />
     
     <div v-if="shoppingCart.length < 1">
       <div class="p-2 d-flex justify-content-center align-items-center">
