@@ -45,32 +45,34 @@
               <i class="fas fa-shopping-cart black"></i>
               <span v-show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{{ cartItemCount }}</span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdownMenuLink">
-              <ShoppingCart />
-            </ul>
-          </li>
+            <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdown">
+                <ShoppingCart />
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fas fa-user black"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              USER SETTINGS
-            </ul>
-          </li>
-
-        </ul>
-
+            <li class="nav-item dropdown" v-if="loggedIn">
+              <a
+                class="nav-link dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <router-link class="nav-link black" aria-current="page" to="/user">Settings</router-link>
+                </li>
+              </ul>
+            </li>
+            <li v-if="!loggedIn">
+              <router-link class="nav-link" to="/Login"><i class="fas fa-user black"></i></router-link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 </template>
 
 <script>
@@ -82,8 +84,13 @@ export default {
     ShoppingCart
   },
   computed: {
-    ...mapGetters(['cartItemCount'])
+    ...mapGetters(['cartItemCount', 'loggedIn'])
   }
+  //  data() {
+  //    return {
+  //      loggedIn: false
+  //    }
+  //  }
 }
 </script>
 
@@ -98,6 +105,5 @@ export default {
 .black {
   color: black;
 }
-
-
 </style>
+
