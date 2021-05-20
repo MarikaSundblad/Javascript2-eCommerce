@@ -27,11 +27,7 @@
         <label for="password" class="form-label">Password</label>
       </div>
 
-      <button class="btn btn-primary btn-block mb-4">Sign in</button>
-
-      <div class="text-center">
-        <small>Not a member? <router-link to="/register">Register</router-link></small>
-      </div>
+      <button class="btn btn-primary btn-block mb-4">Sign up/button>
 
     </form>
   </div>
